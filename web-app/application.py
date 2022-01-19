@@ -21,8 +21,8 @@ def players():
 def show_player(player_id):
     conn = sqlite3.connect(app.config['DATABASE'])
     cursor = conn.cursor()
-   cursor.execute('select * from players where id = ?;', (player_id,))
-   player_details = cursor.fetchone()
-   jsonify(player_details)
+    cursor.execute('select * from players where id = ?;', (player_id,))
+    player_details = cursor.fetchone()
+    jsonify(player_details)
 
 app.run(debug = True)
